@@ -1,7 +1,63 @@
+import { useEffect, useState } from "react";
+import Spinner from '../components/Spinner'
+import Product from "../components/Product"
+
+
 const Home = () => {
   const API_URL = "https://fakestoreapi.com/products";
 
-  return <div>Home</div>;
+  const [loading, setLoading] = useState(false);
+  const [posts, setPosts] = useState([]);
+
+
+  async function fetchProductData(){
+    setLoading(true);
+   
+    try{
+      const res = await fetch(API_URL);
+      const data= await res.json();
+
+      setPosts(data);
+      console.log("API Respose");
+      console.log(data);
+
+    }catch(error){
+      console.log(" Error in fetching API"  + " "  + error);
+      setPosts([]);
+    }
+
+    setLoading(false);
+  }
+
+  useEffect( () => {
+    fetchProductData();
+  }, [])
+
+
+  return (
+    <div>
+      {
+        loading ? (<Spinner/>) : 
+        (
+          posts.length > 0 ? 
+          (<div>
+            {
+              posts.map( (post) => (
+                <Product key={post.id} post={post}/>
+              ))
+            }
+          </div>
+            
+          ) : 
+          (
+            <div>
+                <p>NO Data Found</p>
+            </div>
+          )
+        )
+      }
+    </div>
+  )
 };
 
 export default Home;
