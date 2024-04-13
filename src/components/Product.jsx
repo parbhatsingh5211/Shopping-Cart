@@ -21,7 +21,9 @@ const Product = ( {post} ) => {
 
   return (
     <div className='flex flex-col items-center justify-between 
-    hover:scale-110 transition duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl'>
+    hover:scale-110 transition duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl
+    shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] 
+    hover:shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]'>
       <div>
         <p className='text-grey-700 font-semibold text-lg text-left truncate w-40 mt-1'>{post.title}</p>
       </div>
