@@ -17,11 +17,11 @@ const CartItem = ({item, itemIndex}) => {
     <div className=''>
 
       <div className='flex gap-x-12 border-solid border-b-2 gap-3 p-4 mt-10 rounded-xl'>
-        <div className='h-[150px] w-[150px]'>  
-          <img src={item.image} alt={item.alt} className='w-full h-full'/>
+        <div className='h-[150px] w-[100px] sm:w-[100px] md:w-[180px] lg:[180px]'>  
+          <img src={item.image} alt={item.alt} className='w-full h-full object-contain'/>
         </div>
 
-        <div className='w-[350px] flex flex-col gap-y-3'>
+        <div className='flex flex-col gap-y-3'>
           <h1 className='font-semibold text-lg'>{item.title}</h1>
           <h1 className='text-xs'>{item.description.split(" ").slice(0,15).join(" ") + "..."}</h1>
           <div className='flex justify-between mt-3'>

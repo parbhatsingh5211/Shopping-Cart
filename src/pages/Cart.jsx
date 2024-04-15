@@ -15,12 +15,12 @@ const Cart = () => {
   }, [cart])
 
   return (
-    <div className='h-[89vh] '>
+    <div className='h-[89vh] mx-10'>
       {
         cart.length > 0 ? 
         (
           <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-2 mx-auto max-w-6xl gap-x-16'>
-            <div className='w-[100%] '>
+            <div className='w-[100%]'>
               {
                 cart.map( (item, index) => (
                   <CartItem key={item.id} item={item} itemIndex={index}/>
@@ -28,7 +28,7 @@ const Cart = () => {
               }
             </div>
 
-            <div className='grid grid-end  h-[750px]  mt-[90px] xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 '>
+            <div className='grid grid-end  h-[750px]  mt-[90px] grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 '>
               <div className=''>
                   <div className='text-sm text-green-600 font-semibold'>Your Cart</div>
                   <div className='text-3xl font-bold text-green-700 uppercase -mt-1'>Summary</div>
